@@ -1,7 +1,17 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+require('dotenv').config()
+
+const productsRoutes = require('./routes/products')
+//const ordersRoutes = require('./routes/orders')
+const userRoutes = require('./routes/users')
 
 app.use(express.static('public'))
-
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
+app.use('/',productsRoutes)
+//app.use('/api/orders',ordersRoutes)
+app.use('/',userRoutes)
 
 app.listen(8080, () => console.log("Server started"))
