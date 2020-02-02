@@ -1,6 +1,6 @@
 const DataStore = require("nedb-promise")
 
-const products = new DataStore({filename: "./data/products.db",autoload: true})
+const products = new DataStore({filename: "../data/product.db",autoload: true})
 
 module.exports = {
 
@@ -26,19 +26,16 @@ module.exports = {
         },
     
         async remove(id){
-            const numDeleted = await products.remove({_id:id})
-            return numDeleted > 0
+          
+            return await db.remove({ _id: id });
         },
     
 
         async update(id, body){        
-            const numUpdated = await products.update(
-                {_id:id},
-                {$set:{
-                        content: body.content || product.content
-                }}
-            )
-            return numUpdated > 0
-        }
+            const  product = await products.findOne({ _id: id })
+            product = await products.update(product, { $set: body })
+            return product   
+    
     }
+}
 
