@@ -1,6 +1,6 @@
 const DataStore = require("nedb-promise")
 
-const products = new DataStore({filename: "../data/product.db",autoload: true})
+const products = new DataStore({filename: "data/product.db",autoload: true})
 
 module.exports = {
 

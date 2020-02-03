@@ -1,15 +1,13 @@
-  
-const router = require("express");
-const router = new Router();
-
+const express = require("express");
+const router = express.Router();
 const Order = require("../models/order");
 
-router.get("/", async (req, res) => {
+router.get("/order", async (req, res) => {
   const user = await Order.all();
   res.json(user);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/order/:id", async (req, res) => {
   const user = await Order.create(req.params.id);
  if(user){
       res.json(user)
@@ -19,7 +17,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/order", async (req, res) => {
   const user = await Order.create(req.body);
   if(user){
       res.json(user)
@@ -30,7 +28,7 @@ router.post("/", async (req, res) => {
 });
 
 
-router.patch("/:id", async (req, res) => {
+router.patch("/order:id", async (req, res) => {
   const user = await Order.update(req.params.id, req.body);
   if(user){
       res.json(user)
@@ -40,7 +38,7 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/order:id", async (req, res) => {
   const user = await Product.remove(req.params.id);
   
   if(user){
