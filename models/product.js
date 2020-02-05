@@ -15,6 +15,7 @@ module.exports = {
 
         async create(body){
             return await products.insert({
+                _id:body.id,
                  serial : body.serial,
                 title: body.title,
                 price: body.price,
@@ -27,7 +28,7 @@ module.exports = {
     
         async remove(id){
           
-            return await db.remove({ _id: id });
+            return await db.remove({ _id: id })
         },
     
 

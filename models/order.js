@@ -5,10 +5,10 @@ const orders = new DataStore({filename: "data/order.db",autoload: true})
 
 module.exports = {
 
-    async Orders() {
+    async all() {
         return await orders.find({});
     },
-
+ 
    
     async create(body) {
         const newOrder = {

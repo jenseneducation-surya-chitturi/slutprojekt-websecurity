@@ -7,38 +7,17 @@ router.get("/order", async (req, res) => {
   res.json(user);
 });
 
-router.get("/order/:id", async (req, res) => {
-  const user = await Order.create(req.params.id);
- if(user){
-      res.json(user)
-  
-  } else{
-          res.json({ message: 'Product created' })
-  }
-});
-
 router.post("/order", async (req, res) => {
   const user = await Order.create(req.body);
   if(user){
       res.json(user)
   
   } else{
-          res.json({ message: 'Product created' })
+          res.json({ message: 'order created' })
   }
 });
 
-
-router.patch("/order:id", async (req, res) => {
-  const user = await Order.update(req.params.id, req.body);
-  if(user){
-      res.json(user)
-  
-  } else{
-          res.json({ message: 'Product updated' })
-  }
-});
-
-router.delete("/order:id", async (req, res) => {
+router.delete("/order/:id", async (req, res) => {
   const user = await Product.remove(req.params.id);
   
   if(user){
