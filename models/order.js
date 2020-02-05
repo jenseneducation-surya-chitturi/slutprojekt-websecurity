@@ -22,3 +22,4 @@ module.exports = {
         return await orders.insert(newOrder);
     }
 };
+

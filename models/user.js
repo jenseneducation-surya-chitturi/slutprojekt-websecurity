@@ -16,7 +16,7 @@ module.exports = {
                 const newUser = {
                     email: body.email,
                     password: passwordHash,
-                    role: "user", //admin
+                    role: "customer", //admin
                     name: body.name,
                     adress: {
                         street: body.adress.street,
@@ -29,7 +29,7 @@ module.exports = {
                         validUntil: body.payment.validUntil,
                         cvv: body.payment.cvv
                       },
-                      orderHistory: body.orderHistory
+                      orderHistory:[]
                 };
                 return await users.insert(newUser);
             }
