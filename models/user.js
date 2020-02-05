@@ -23,12 +23,12 @@ module.exports = {
                         zip: body.adress.zip,
                         city: body.adress.city
                     },
-                    payment: {
+                  /*   payment: {
                         cardOwner: body.payment.cardOwner,
                         cardNumber: body.payment.cardNumber,
                         validUntil: body.payment.validUntil,
                         cvv: body.payment.cvv
-                      },
+                      }, */
                       orderHistory:[]
                 };
                 return await users.insert(newUser);

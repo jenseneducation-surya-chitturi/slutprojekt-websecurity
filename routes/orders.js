@@ -1,30 +1,35 @@
 const express = require("express");
 const router = express.Router();
 const Order = require("../models/order");
+const auth = require("./auth")
 
-router.get("/", async (req, res) => {
-  const user = await Order.all();
-  res.json(user);
+router.get("/", auth.auth, async (req, res) => {
+  try {
+    if (req.user.role === "admin") {
+     const user = await Order.find();
+      res.json(user);
+
+    } else if (req.user.role === "customer") {
+      const user = await Order.getOne(req.user.id);
+      res.json(user);
+    }
+  } catch (error) {
+
+    res.json({ message: error });
+  }
+ 
 });
 
- router.post("/", async (req, res) => {
-  const user = await Order.create(req.body);
-  if(user){
-      res.json(user)
-  
-  } else{
-          res.json({ message: 'order created' })
+ router.post("/",auth.auth, async (req, res) => {
+
+  try {
+    const user = await Order.create(req.body, req.user.id);
+    res.json(user);
+  } catch (error) {
+    
+    res.json({ message: error });
   }
+
 });
 
-router.delete("/:id", async (req, res) => {
-  const user = await Product.remove(req.params.id);
-  
-  if(user){
-      res.json(user)
-  
-  } else{
-          res.json({ message: 'Product removed' })
-  }
-}) 
 module.exports = router;
