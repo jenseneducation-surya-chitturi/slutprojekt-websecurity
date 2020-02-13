@@ -23,12 +23,7 @@ module.exports = {
                         zip: body.adress.zip,
                         city: body.adress.city
                     },
-                  /*   payment: {
-                        cardOwner: body.payment.cardOwner,
-                        cardNumber: body.payment.cardNumber,
-                        validUntil: body.payment.validUntil,
-                        cvv: body.payment.cvv
-                      }, */
+                  
                       orderHistory:[]
                 };
                 return await users.insert(newUser);
@@ -75,12 +70,11 @@ module.exports = {
         }
     },
     
-    async myPayment(userID, payment) {
+   async myPayment(userID, payment) {
         await users.update({ _id: userID }, { $set: { payment: payment } });
     },
     async myOrder(userID, orderID) {
         await users.update({ _id: userID }, { $push: { orderHistory: orderID } });
-    }
-
+  } 
 };
 

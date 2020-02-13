@@ -1,4 +1,6 @@
 {"email":"teja@gmail.com","password":"$2a$10$GpxEAzrUAt6/UVsLUsRuduk777ddCVzMTWLpmIo4qS8gY5ZvgBUIG","role":"admin","name":"teja","adress":{"street":"d3","zip":"erv","city":"23ef3"},"_id":"9vkEzCxSfollM0HZ"}
+{"email":"abbu@gmail.com","password":"$2a$10$oDwEXDg6BjdRTBlvd4w5FupUX15X/nHUh5y0y1eGjLrWVv5LWjkBa","role":"customer","name":"abbu","adress":{"street":"1234","zip":"1234","city":"1234"},"orderHistory":[],"_id":"QejnbCyisD7xFpOm"}
 {"email":"satya@gmail.com","password":"$2a$10$XT8RmHyvWwtHjGPc6hpONubBLji8EQ1FKRbjsTKu4oMh8KtYHwGpC","role":"user","name":"satya","adress":{"street":"asdf","zip":"asdf","city":"asdf"},"_id":"SJzEFH5gBKzSrh1P"}
 {"email":"dan@gmail.com","password":"$2a$10$A/CCRqVDCU9g8Tp4qFvu6uuldb2ts3bz8rTfN9uKWE0gl19wHJ0JW","role":"customer","name":"dan","adress":{"street":"asdf","zip":"asdf","city":"asdf"},"orderHistory":[],"_id":"fWy7I5vhB89zJSo5"}
 {"email":"surya@gmail.com","password":"$2a$10$VU3bxYP7O3jTaeWbBmCw4eSNh0T8AI/OjCIMjZjUjNP8WgA2/ZPFm","role":"admin","name":"surya","adress":{"street":"marsta","zip":"1234","city":"stockholm"},"_id":"i6nIkCkr8RHLXYba"}
+{"email":"kan@gmail.com","password":"$2a$10$Duv5.9pFNovALI67WFQAVuxNxOBXZE4G6h4ub43EXY6Clap3ulf8G","role":"customer","name":"kan","adress":{"street":"sdfg","zip":"sdfg","city":"sdfg"},"orderHistory":[],"_id":"jshAa1cuNpbJe2P9"}

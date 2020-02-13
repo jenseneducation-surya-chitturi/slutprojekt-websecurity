@@ -10,7 +10,7 @@ router.get("/", auth.auth, async (req, res) => {
       res.json(user);
 
     } else if (req.user.role === "customer") {
-      const user = await Order.getOne(req.user.id);
+      const user = await Order.getOne(req.user.ID);
       res.json(user);
     }
   } catch (error) {
@@ -23,7 +23,7 @@ router.get("/", auth.auth, async (req, res) => {
  router.post("/",auth.auth, async (req, res) => {
 
   try {
-    const user = await Order.create(req.body, req.user.id);
+    const user = await Order.create(req.body, req.user.userID);
     res.json(user);
   } catch (error) {
     
